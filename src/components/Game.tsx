@@ -14,7 +14,7 @@ const Status = styled.div`
 `;
 
 const WrapperGame = styled.div`
-  color: #fff;
+  color: black;
 `;
 
 const GameBoard = styled.div`

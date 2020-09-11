@@ -1,5 +1,4 @@
-// import React from "react";
-export function useGameWinner(value: any[]) {
+export function calculateWinner(value: ("O" | "X" | null)[]): "O" | "X" | null {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],

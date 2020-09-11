@@ -3,16 +3,15 @@ import styled from "styled-components";
 
 import { Square } from "./Square";
 
-const BoardWrapper = styled.div`
-  text-align: center;
-`;
-
-const Boards = styled.div`
-  color: #fff;
-`;
-
 const BoardRow = styled.div`
-  color: #fff;
+  display: flex;
+  justify-content: center;
+
+  &:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
 `;
 
 interface BoardProps {
@@ -30,26 +29,24 @@ export const Board: FC<BoardProps> = ({ onClick, value }) => {
     [onClick, value]
   );
   return (
-    <BoardWrapper>
-      <Boards>
-        <BoardRow>
-          {renderSquare(0)}
-          {renderSquare(1)}
-          {renderSquare(2)}
-        </BoardRow>
+    <div>
+      <BoardRow>
+        {renderSquare(0)}
+        {renderSquare(1)}
+        {renderSquare(2)}
+      </BoardRow>
 
-        <BoardRow>
-          {renderSquare(3)}
-          {renderSquare(4)}
-          {renderSquare(5)}
-        </BoardRow>
+      <BoardRow>
+        {renderSquare(3)}
+        {renderSquare(4)}
+        {renderSquare(5)}
+      </BoardRow>
 
-        <BoardRow>
-          {renderSquare(6)}
-          {renderSquare(7)}
-          {renderSquare(8)}
-        </BoardRow>
-      </Boards>
-    </BoardWrapper>
+      <BoardRow>
+        {renderSquare(6)}
+        {renderSquare(7)}
+        {renderSquare(8)}
+      </BoardRow>
+    </div>
   );
 };
